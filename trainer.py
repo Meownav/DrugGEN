@@ -857,8 +857,9 @@ class Trainer(object):
                         )
 
                 if (idx + 1) % 10 == 0:
-                    self.save_model(self.model_directory, idx, i)
-                    print("model saved at epoch {} and iteration {}".format(idx, i))
+                    if i % 10 == 0:
+                        self.save_model(self.model_directory, idx, i)
+                        print("model saved at epoch {} and iteration {}".format(idx, i))
 
     def inference(self):
         # Load the trained generator.
