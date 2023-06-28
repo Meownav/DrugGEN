@@ -634,7 +634,7 @@ class Trainer(object):
             dataloader_iterator = iter(self.drugs_loader)
 
             for i, data in enumerate(self.loader):
-                if i % 100:
+                if i % 100 == 0:
                     print(i, end="||")
                 try:
                     drugs = next(dataloader_iterator)
